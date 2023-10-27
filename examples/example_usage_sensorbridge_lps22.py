@@ -28,7 +28,7 @@ args = parser.parse_args()
 
 with ShdlcSerialPort(port=args.serial_port, baudrate=460800) as port:
     bridge = SensorBridgeShdlcDevice(ShdlcConnection(port), slave_address=0)
-    bridge.set_i2c_frequency(SensorBridgePort.ONE, frequency=100e3)
+    bridge.set_i2c_frequency(SensorBridgePort.ONE, frequency=400e3)
     bridge.set_supply_voltage(SensorBridgePort.ONE, voltage=3.3)
     bridge.switch_supply_on(SensorBridgePort.ONE)
     i2c_transceiver = SensorBridgeI2cProxy(bridge, port=SensorBridgePort.ONE)

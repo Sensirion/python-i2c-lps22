@@ -24,8 +24,7 @@ args = parser.parse_args()
 
 with LinuxI2cTransceiver(args.i2c_port) as i2c_transceiver:
     channel = I2cChannel(I2cConnection(i2c_transceiver),
-                         slave_address=0x5C,
-                         crc=CrcCalculator(8, 0x31, 0xff, 0x0))
+                         slave_address=0x5C)
     sensor = Lps22Device(channel)
     sensor.swreset()
     sensor.start_one_shot_measurement()
