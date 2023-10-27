@@ -33,27 +33,30 @@ with ShdlcSerialPort(port=args.serial_port, baudrate=460800) as port:
     bridge.switch_supply_on(SensorBridgePort.ONE)
     i2c_transceiver = SensorBridgeI2cProxy(bridge, port=SensorBridgePort.ONE)
     channel = I2cChannel(I2cConnection(i2c_transceiver),
-                         slave_address=0x5C,
-                         crc=CrcCalculator(8, 0x31, 0xff, 0x0))
+                         slave_address=0x5C)
     sensor = Lps22Device(channel)
     sensor.swreset()
     sensor.start_one_shot_measurement()
-    a_status = sensor.status()
-    print(f"a_status: {a_status}; "
-          )
+    data_ready = False
+    while not data_ready:
+        time.sleep(0.1)
+        a_status = sensor.status()
+        data_ready = a_status.P_DA and a_status.T_DA
     a_pressure = sensor.read_pressure()
     print(f"a_pressure: {a_pressure}; "
           )
     a_temperature = sensor.read_temperature()
     print(f"a_temperature: {a_temperature}; "
           )
+
     sensor.start_continious_measurement(OdrFrequency.FREQUENCY1HZ)
-    for i in range(5):
+    for i in range(20):
         try:
-            time.sleep(1.0)
-            a_status = sensor.status()
-            print(f"a_status: {a_status}; "
-                  )
+            data_ready = False
+            while not data_ready:
+                time.sleep(0.1)
+                a_status = sensor.status()
+                data_ready = a_status.P_DA and a_status.T_DA
             a_pressure = sensor.read_pressure_single_bytes()
             print(f"a_pressure: {a_pressure}; "
                   )
