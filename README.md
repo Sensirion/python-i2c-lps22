@@ -1,39 +1,18 @@
-# Python I2C Driver for Sensirion LPS22
+# Python I2C Driver for ST LPS22 sensor
 
-This repository contains the Python driver to communicate with a Sensirion LPS22 sensor over I2C. 
+This repository contains the Python driver to communicate with a ST LPS22 pressure sensor over I2C. 
 
-<img src="https://raw.githubusercontent.com/Sensirion/python-i2c-lps22/master/None"
-    width="300px" alt="LPS22 picture">
+<img src="https://raw.githubusercontent.com/Sensirion/python-i2c-lps22/master/images/product-image-st-lps22.jpeg"
+width="300px" alt="LPS22 picture">
 
 
 Click [here](https://www.st.com/en/mems-and-sensors/lps22hb.html) to learn more about the Sensirion LPS22 sensor.
 
 
-For details about the command please consult the datasheet https://www.st.com/resource/en/datasheet/lps22hb.pdf
-
+For details about the command please consult the [datasheet](https://www.st.com/resource/en/datasheet/lps22hb.pdf).
 
 
 The default I²C address of [LPS22](https://www.st.com/en/mems-and-sensors/lps22hb.html) is **0x5C**.
-
-
-
-## Connect the sensor
-
-You can connect your sensor over a [SEK-SensorBridge](https://developer.sensirion.com/sensirion-products/sek-sensorbridge/).
-For special setups you find the sensor pinout in the section below.
-
-<details><summary>Sensor pinout</summary>
-<p>
-<img src="https://raw.githubusercontent.com/Sensirion/python-i2c-lps22/master/images/product-pinout.jpeg"
-     width="300px" alt="sensor wiring picture">
-
-| *Pin* | *Cable Color* | *Name* | *Description*  | *Comments* |
-|-------|---------------|:------:|----------------|------------|
-| 1 |  | NC | Do not connect | 
-
-
-</p>
-</details>
 
 
 ## Documentation & Quickstart
