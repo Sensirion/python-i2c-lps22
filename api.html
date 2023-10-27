@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Documentation &mdash; sensirion_i2c_lps22 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Build documentation" href="build-documentation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> sensirion_i2c_lps22
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lps22">LPS22</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-sensirion_i2c_lps22.device">Lps22Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sensirion_i2c_lps22.commands">Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sensirion_i2c_lps22.result_types">Result Types</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">sensirion_i2c_lps22</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>API Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api-documentation">
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline"></a></h1>
+<section id="lps22">
+<h2>LPS22<a class="headerlink" href="#lps22" title="Permalink to this headline"></a></h2>
+<section id="module-sensirion_i2c_lps22.device">
+<span id="lps22device"></span><h3>Lps22Device<a class="headerlink" href="#module-sensirion_i2c_lps22.device" title="Permalink to this headline"></a></h3>
+<p>The class Lps22DeviceBase implements the low level interface of the sensor.
+The class Lps22Device extends the Lps22DeviceBase. It provides additional functions to ease the use of the
+sensor.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.device.</span></span><span class="sig-name descname"><span class="pre">Lps22DeviceBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase" title="Permalink to this definition"></a></dt>
+<dd><p>Low level API implementation of LPS22</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.channel">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">channel</span></span><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.channel" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.whoami">
+<span class="sig-name descname"><span class="pre">whoami</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.whoami"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.whoami" title="Permalink to this definition"></a></dt>
+<dd><p>Get the chip id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return chip_id</dt>
+<dd class="field-odd"><p>id of the chip, expecting 0xB1 for LPS22</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.status">
+<span class="sig-name descname"><span class="pre">status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.status" title="Permalink to this definition"></a></dt>
+<dd><p>Get the status bit. See datasheet for description of the bits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return status_bit</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.get_ctrl_reg1">
+<span class="sig-name descname"><span class="pre">get_ctrl_reg1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.get_ctrl_reg1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.get_ctrl_reg1" title="Permalink to this definition"></a></dt>
+<dd><p>Get the control register 1.
+See datasheet for description of the options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return register_value</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.set_ctrl_reg1">
+<span class="sig-name descname"><span class="pre">set_ctrl_reg1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">register_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.set_ctrl_reg1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.set_ctrl_reg1" title="Permalink to this definition"></a></dt>
+<dd><p>Set the control register 1.
+See datasheet for description of the options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>register_value</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.get_ctrl_reg2">
+<span class="sig-name descname"><span class="pre">get_ctrl_reg2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.get_ctrl_reg2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.get_ctrl_reg2" title="Permalink to this definition"></a></dt>
+<dd><p>Get the control register 3.
+See datasheet for description of the options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return register_value</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.set_ctrl_reg2">
+<span class="sig-name descname"><span class="pre">set_ctrl_reg2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">register_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.set_ctrl_reg2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.set_ctrl_reg2" title="Permalink to this definition"></a></dt>
+<dd><p>Set the control register 2.
+See datasheet for description of the options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>register_value</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.get_ctrl_reg3">
+<span class="sig-name descname"><span class="pre">get_ctrl_reg3</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.get_ctrl_reg3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.get_ctrl_reg3" title="Permalink to this definition"></a></dt>
+<dd><p>Get the control register 3.
+See datasheet for description of the options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return register_value</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.set_ctrl_reg3">
+<span class="sig-name descname"><span class="pre">set_ctrl_reg3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">register_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.set_ctrl_reg3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.set_ctrl_reg3" title="Permalink to this definition"></a></dt>
+<dd><p>Set the control register 3.
+See datasheet for description of the options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>register_value</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.read_pressure_out_xl">
+<span class="sig-name descname"><span class="pre">read_pressure_out_xl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.read_pressure_out_xl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.read_pressure_out_xl" title="Permalink to this definition"></a></dt>
+<dd><p>Read current pressure from register, LSB</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return pressure</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.read_pressure_out_l">
+<span class="sig-name descname"><span class="pre">read_pressure_out_l</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.read_pressure_out_l"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.read_pressure_out_l" title="Permalink to this definition"></a></dt>
+<dd><p>Read current pressure from register, middle byte</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return pressure</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.read_pressure_out_h">
+<span class="sig-name descname"><span class="pre">read_pressure_out_h</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.read_pressure_out_h"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.read_pressure_out_h" title="Permalink to this definition"></a></dt>
+<dd><p>Read current pressure from register, MSB</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return pressure</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.read_pressure">
+<span class="sig-name descname"><span class="pre">read_pressure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.read_pressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.read_pressure" title="Permalink to this definition"></a></dt>
+<dd><p>Read current pressure in register auto increment mode. The value returned is a two’s complement and has a scale factor of 4096 to convert to hPa.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return pressure</dt>
+<dd class="field-odd"><p>pressurer, three bytes in little endian order</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.read_temperature_l">
+<span class="sig-name descname"><span class="pre">read_temperature_l</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.read_temperature_l"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.read_temperature_l" title="Permalink to this definition"></a></dt>
+<dd><p>Read temperature measurement from register, LOW byte</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return temperature_l</dt>
+<dd class="field-odd"><p>temperature low byte</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.read_temperature_h">
+<span class="sig-name descname"><span class="pre">read_temperature_h</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.read_temperature_h"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.read_temperature_h" title="Permalink to this definition"></a></dt>
+<dd><p>Read temperature measurement from register, high byte</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return temperature_h</dt>
+<dd class="field-odd"><p>temperature high byte</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.read_temperature">
+<span class="sig-name descname"><span class="pre">read_temperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.read_temperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.read_temperature" title="Permalink to this definition"></a></dt>
+<dd><p>Read current temperature from registers in auto increment mode.
+The value returned has a scale factor of 100 to convert to degC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return temperature</dt>
+<dd class="field-odd"><p>temperature, two bytes in little endian order</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22DeviceBase.reset_low_pass">
+<span class="sig-name descname"><span class="pre">reset_low_pass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22DeviceBase.reset_low_pass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22DeviceBase.reset_low_pass" title="Permalink to this definition"></a></dt>
+<dd><p>Low-pass filter reset. If the LPFP is active, in order to avoid the transitory phase, the
+filter can be reset by reading this register before generating pressure measurements.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.device.</span></span><span class="sig-name descname"><span class="pre">Lps22Device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device" title="Permalink to this definition"></a></dt>
+<dd><p>Driver class implementation of LPS22</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.lps22">
+<span class="sig-name descname"><span class="pre">lps22</span></span><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.lps22" title="Permalink to this definition"></a></dt>
+<dd><p>Access to base class</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.get_ctrl_reg1">
+<span class="sig-name descname"><span class="pre">get_ctrl_reg1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.get_ctrl_reg1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.get_ctrl_reg1" title="Permalink to this definition"></a></dt>
+<dd><p>Get control register 1.
+See datasheet for details about the bitfields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return register_value</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.get_ctrl_reg2">
+<span class="sig-name descname"><span class="pre">get_ctrl_reg2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.get_ctrl_reg2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.get_ctrl_reg2" title="Permalink to this definition"></a></dt>
+<dd><p>Get control register 2.
+See datasheet for details about the bitfields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return register_value</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.get_ctrl_reg3">
+<span class="sig-name descname"><span class="pre">get_ctrl_reg3</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.get_ctrl_reg3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.get_ctrl_reg3" title="Permalink to this definition"></a></dt>
+<dd><p>Get control register 3.
+See datasheet for details about the bitfields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return register_value</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.activate_multi_byte_read">
+<span class="sig-name descname"><span class="pre">activate_multi_byte_read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.activate_multi_byte_read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.activate_multi_byte_read" title="Permalink to this definition"></a></dt>
+<dd><p>Register address is automatically incremented during a multiple byte
+read access.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.deactivate_multi_byte_read">
+<span class="sig-name descname"><span class="pre">deactivate_multi_byte_read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.deactivate_multi_byte_read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.deactivate_multi_byte_read" title="Permalink to this definition"></a></dt>
+<dd><p>Disable that Register address is automatically incremented.
+If this is disabled, use single-byte read functions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.power_down_mode">
+<span class="sig-name descname"><span class="pre">power_down_mode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.power_down_mode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.power_down_mode" title="Permalink to this definition"></a></dt>
+<dd><p>Switch to power down mode. In this mode one shot measurements can be done.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.stop_continious_measurement">
+<span class="sig-name descname"><span class="pre">stop_continious_measurement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.stop_continious_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.stop_continious_measurement" title="Permalink to this definition"></a></dt>
+<dd><p>Stop any running continious measurement.
+Sensor is in power down mode afterwards.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.start_one_shot_measurement">
+<span class="sig-name descname"><span class="pre">start_one_shot_measurement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.start_one_shot_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.start_one_shot_measurement" title="Permalink to this definition"></a></dt>
+<dd><p>Start a one-shot measurement.
+Use read_pressure and read_temperature to get sensor values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.start_continious_measurement">
+<span class="sig-name descname"><span class="pre">start_continious_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">measurement_frequency</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.start_continious_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.start_continious_measurement" title="Permalink to this definition"></a></dt>
+<dd><p>Start continious measurement with given frequency.
+Use read_pressure_single_bytes and read_temperature_signle_bytes to get sensor values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>measurement_frequency</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.status">
+<span class="sig-name descname"><span class="pre">status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.status" title="Permalink to this definition"></a></dt>
+<dd><p>Get current data ready status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return a_status</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.read_pressure">
+<span class="sig-name descname"><span class="pre">read_pressure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.read_pressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.read_pressure" title="Permalink to this definition"></a></dt>
+<dd><p>Read pressure value with multi byte read.
+Make sure you have the sensor in correct mode by runnin activate_multi_byte_read()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return a_pressure</dt>
+<dd class="field-odd"><p>measured pressure in hPa</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.read_pressure_single_bytes">
+<span class="sig-name descname"><span class="pre">read_pressure_single_bytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.read_pressure_single_bytes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.read_pressure_single_bytes" title="Permalink to this definition"></a></dt>
+<dd><p>Read temperature measurement from registers in single byte read mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return a_pressure</dt>
+<dd class="field-odd"><p>measured pressure in hPa</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.read_temperature">
+<span class="sig-name descname"><span class="pre">read_temperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.read_temperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.read_temperature" title="Permalink to this definition"></a></dt>
+<dd><p>Read temperature value with multi byte read.
+Make sure you have the sensor in correct mode by running activate_multi_byte_read()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return a_temperature</dt>
+<dd class="field-odd"><p>measured temperature in degC</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.read_temperature_single_bytes">
+<span class="sig-name descname"><span class="pre">read_temperature_single_bytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.read_temperature_single_bytes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.read_temperature_single_bytes" title="Permalink to this definition"></a></dt>
+<dd><p>Read temperature measurement from registers in single byte read mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return a_temperature</dt>
+<dd class="field-odd"><p>measured temperature in degC</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.swreset">
+<span class="sig-name descname"><span class="pre">swreset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.swreset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.swreset" title="Permalink to this definition"></a></dt>
+<dd><p>The SWRESET bit resets the volatile registers to default value 0.
+It returns to 0 by hardware.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sensirion_i2c_lps22.commands">
+<span id="commands"></span><h3>Commands<a class="headerlink" href="#module-sensirion_i2c_lps22.commands" title="Permalink to this headline"></a></h3>
+<p>The transfer classes specify the data that is transferred between host and sensor. The generated transfer classes
+are used by the driver class and not intended for direct use.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.Whoami">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">Whoami</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#Whoami"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.Whoami" title="Permalink to this definition"></a></dt>
+<dd><p>Get the chip id.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.Whoami.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">15</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.Whoami.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.Whoami.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#Whoami.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.Whoami.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.Whoami.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.Whoami.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.Whoami.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.Whoami.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.Status">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">Status</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#Status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.Status" title="Permalink to this definition"></a></dt>
+<dd><p>Get the status bit. See datasheet for description of the bits.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.Status.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">39</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.Status.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.Status.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#Status.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.Status.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.Status.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.Status.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.Status.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.Status.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg1">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">GetCtrlReg1</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#GetCtrlReg1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg1" title="Permalink to this definition"></a></dt>
+<dd><p>Get the control register 1.
+See datasheet for description of the options.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg1.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">16</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg1.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg1.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#GetCtrlReg1.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg1.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg1.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg1.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg1.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg1.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.SetCtrlReg1">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">SetCtrlReg1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">register_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#SetCtrlReg1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.SetCtrlReg1" title="Permalink to this definition"></a></dt>
+<dd><p>Set the control register 1.
+See datasheet for description of the options.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.SetCtrlReg1.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">16</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.SetCtrlReg1.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.SetCtrlReg1.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#SetCtrlReg1.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.SetCtrlReg1.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.SetCtrlReg1.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.SetCtrlReg1.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg2">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">GetCtrlReg2</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#GetCtrlReg2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg2" title="Permalink to this definition"></a></dt>
+<dd><p>Get the control register 3.
+See datasheet for description of the options.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg2.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">17</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg2.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg2.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#GetCtrlReg2.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg2.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg2.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg2.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg2.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg2.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.SetCtrlReg2">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">SetCtrlReg2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">register_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#SetCtrlReg2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.SetCtrlReg2" title="Permalink to this definition"></a></dt>
+<dd><p>Set the control register 2.
+See datasheet for description of the options.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.SetCtrlReg2.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">17</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.SetCtrlReg2.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.SetCtrlReg2.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#SetCtrlReg2.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.SetCtrlReg2.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.SetCtrlReg2.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.SetCtrlReg2.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg3">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">GetCtrlReg3</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#GetCtrlReg3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg3" title="Permalink to this definition"></a></dt>
+<dd><p>Get the control register 3.
+See datasheet for description of the options.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg3.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">18</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg3.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg3.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#GetCtrlReg3.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg3.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg3.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg3.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.GetCtrlReg3.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.GetCtrlReg3.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.SetCtrlReg3">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">SetCtrlReg3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">register_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#SetCtrlReg3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.SetCtrlReg3" title="Permalink to this definition"></a></dt>
+<dd><p>Set the control register 3.
+See datasheet for description of the options.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.SetCtrlReg3.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">18</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.SetCtrlReg3.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.SetCtrlReg3.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#SetCtrlReg3.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.SetCtrlReg3.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.SetCtrlReg3.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.SetCtrlReg3.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutXl">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">ReadPressureOutXl</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadPressureOutXl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutXl" title="Permalink to this definition"></a></dt>
+<dd><p>Read current pressure from register, LSB</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutXl.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">40</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutXl.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutXl.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadPressureOutXl.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutXl.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutXl.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutXl.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutXl.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutXl.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutL">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">ReadPressureOutL</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadPressureOutL"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutL" title="Permalink to this definition"></a></dt>
+<dd><p>Read current pressure from register, middle byte</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutL.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">41</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutL.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutL.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadPressureOutL.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutL.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutL.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutL.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutL.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutL.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutH">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">ReadPressureOutH</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadPressureOutH"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutH" title="Permalink to this definition"></a></dt>
+<dd><p>Read current pressure from register, MSB</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutH.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">42</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutH.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutH.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadPressureOutH.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutH.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutH.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutH.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressureOutH.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressureOutH.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressure">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">ReadPressure</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressure" title="Permalink to this definition"></a></dt>
+<dd><p>Read current pressure in register auto increment mode. The value returned is a two’s complement and has a scale factor of 4096 to convert to hPa.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressure.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">40</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressure.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressure.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadPressure.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressure.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressure.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressure.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadPressure.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadPressure.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperatureL">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">ReadTemperatureL</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadTemperatureL"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperatureL" title="Permalink to this definition"></a></dt>
+<dd><p>Read temperature measurement from register, LOW byte</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperatureL.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">43</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperatureL.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperatureL.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadTemperatureL.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperatureL.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperatureL.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperatureL.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperatureL.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperatureL.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperatureH">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">ReadTemperatureH</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadTemperatureH"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperatureH" title="Permalink to this definition"></a></dt>
+<dd><p>Read temperature measurement from register, high byte</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperatureH.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">44</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperatureH.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperatureH.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadTemperatureH.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperatureH.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperatureH.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperatureH.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperatureH.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperatureH.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperature">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">ReadTemperature</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperature" title="Permalink to this definition"></a></dt>
+<dd><p>Read current temperature from registers in auto increment mode.
+The value returned has a scale factor of 100 to convert to degC.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperature.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">43</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperature.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperature.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ReadTemperature.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperature.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperature.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperature.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ReadTemperature.rx">
+<span class="sig-name descname"><span class="pre">rx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.RxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ReadTemperature.rx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ResetLowPass">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">ResetLowPass</span></span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ResetLowPass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ResetLowPass" title="Permalink to this definition"></a></dt>
+<dd><p>Low-pass filter reset. If the LPFP is active, in order to avoid the transitory phase, the
+filter can be reset by reading this register before generating pressure measurements.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ResetLowPass.CMD_ID">
+<span class="sig-name descname"><span class="pre">CMD_ID</span></span><em class="property"> <span class="pre">=</span> <span class="pre">51</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ResetLowPass.CMD_ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ResetLowPass.pack">
+<span class="sig-name descname"><span class="pre">pack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#ResetLowPass.pack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.ResetLowPass.pack" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.ResetLowPass.tx">
+<span class="sig-name descname"><span class="pre">tx</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sensirion_driver_adapters.rx_tx_data.TxData</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.ResetLowPass.tx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegOneT">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">CtrlRegOneT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int_value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#CtrlRegOneT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegOneT" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegOneT.ODR">
+<span class="sig-name descname"><span class="pre">ODR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=4,</span> <span class="pre">width=3)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegOneT.ODR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegOneT.EN_LPFP">
+<span class="sig-name descname"><span class="pre">EN_LPFP</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=3,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegOneT.EN_LPFP" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegOneT.LPFP_CFG">
+<span class="sig-name descname"><span class="pre">LPFP_CFG</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=2,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegOneT.LPFP_CFG" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegOneT.BDU">
+<span class="sig-name descname"><span class="pre">BDU</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=1,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegOneT.BDU" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegTwoT">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">CtrlRegTwoT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int_value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#CtrlRegTwoT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegTwoT" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegTwoT.BOOT">
+<span class="sig-name descname"><span class="pre">BOOT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=7,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegTwoT.BOOT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegTwoT.FIFO_EN">
+<span class="sig-name descname"><span class="pre">FIFO_EN</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=6,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegTwoT.FIFO_EN" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegTwoT.STOP_ON_FTH">
+<span class="sig-name descname"><span class="pre">STOP_ON_FTH</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=5,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegTwoT.STOP_ON_FTH" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegTwoT.IF_ADD_INC">
+<span class="sig-name descname"><span class="pre">IF_ADD_INC</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=4,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegTwoT.IF_ADD_INC" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegTwoT.SWRESET">
+<span class="sig-name descname"><span class="pre">SWRESET</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=2,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegTwoT.SWRESET" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegTwoT.ONE_SHOT">
+<span class="sig-name descname"><span class="pre">ONE_SHOT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=0,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegTwoT.ONE_SHOT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegThreeT">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">CtrlRegThreeT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int_value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#CtrlRegThreeT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegThreeT" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegThreeT.INT_H_L">
+<span class="sig-name descname"><span class="pre">INT_H_L</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=7,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegThreeT.INT_H_L" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegThreeT.PP_OD">
+<span class="sig-name descname"><span class="pre">PP_OD</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=6,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegThreeT.PP_OD" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegThreeT.F_FSS5">
+<span class="sig-name descname"><span class="pre">F_FSS5</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=5,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegThreeT.F_FSS5" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegThreeT.F_FTH">
+<span class="sig-name descname"><span class="pre">F_FTH</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=4,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegThreeT.F_FTH" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegThreeT.F_OVR">
+<span class="sig-name descname"><span class="pre">F_OVR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=3,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegThreeT.F_OVR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegThreeT.DRDY">
+<span class="sig-name descname"><span class="pre">DRDY</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=2,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegThreeT.DRDY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.CtrlRegThreeT.INT_S2">
+<span class="sig-name descname"><span class="pre">INT_S2</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=1,</span> <span class="pre">width=2)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.CtrlRegThreeT.INT_S2" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.StatusT">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">StatusT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">int_value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#StatusT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.StatusT" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.StatusT.T_OR">
+<span class="sig-name descname"><span class="pre">T_OR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=5,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.StatusT.T_OR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.StatusT.P_OR">
+<span class="sig-name descname"><span class="pre">P_OR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=4,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.StatusT.P_OR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.StatusT.T_DA">
+<span class="sig-name descname"><span class="pre">T_DA</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=1,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.StatusT.T_DA" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.StatusT.P_DA">
+<span class="sig-name descname"><span class="pre">P_DA</span></span><em class="property"> <span class="pre">=</span> <span class="pre">BitField(offset=0,</span> <span class="pre">width=1)</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.StatusT.P_DA" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.OdrFrequency">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.commands.</span></span><span class="sig-name descname"><span class="pre">OdrFrequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/commands.html#OdrFrequency"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.commands.OdrFrequency" title="Permalink to this definition"></a></dt>
+<dd><p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY1HZ">
+<span class="sig-name descname"><span class="pre">FREQUENCY1HZ</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY1HZ" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY10HZ">
+<span class="sig-name descname"><span class="pre">FREQUENCY10HZ</span></span><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY10HZ" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY25HZ">
+<span class="sig-name descname"><span class="pre">FREQUENCY25HZ</span></span><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY25HZ" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY50HZ">
+<span class="sig-name descname"><span class="pre">FREQUENCY50HZ</span></span><em class="property"> <span class="pre">=</span> <span class="pre">4</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY50HZ" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY75HZ">
+<span class="sig-name descname"><span class="pre">FREQUENCY75HZ</span></span><em class="property"> <span class="pre">=</span> <span class="pre">5</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY75HZ" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sensirion_i2c_lps22.result_types">
+<span id="result-types"></span><h3>Result Types<a class="headerlink" href="#module-sensirion_i2c_lps22.result_types" title="Permalink to this headline"></a></h3>
+<p>The signal classes specify transformations of the raw sensor signals into a meaningful units.
+The generated signal types are used by the driver class and not intended for direct use.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.result_types.SignalPressure">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.result_types.</span></span><span class="sig-name descname"><span class="pre">SignalPressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_pressure</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/result_types.html#SignalPressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.result_types.SignalPressure" title="Permalink to this definition"></a></dt>
+<dd><p>measured pressure in hPa</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.result_types.SignalPressure.value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#sensirion_i2c_lps22.result_types.SignalPressure.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.result_types.SignalTemperature">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sensirion_i2c_lps22.result_types.</span></span><span class="sig-name descname"><span class="pre">SignalTemperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_temperature</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/result_types.html#SignalTemperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.result_types.SignalTemperature" title="Permalink to this definition"></a></dt>
+<dd><p>measured temperature in degC</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.result_types.SignalTemperature.value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#sensirion_i2c_lps22.result_types.SignalTemperature.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="build-documentation.html" class="btn btn-neutral float-left" title="Build documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023 Sensirion AG, Switzerland.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
