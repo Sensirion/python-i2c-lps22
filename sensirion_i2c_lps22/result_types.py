@@ -21,7 +21,7 @@ class SignalPressure(AbstractSignal):
     """measured pressure in hPa"""
 
     def __init__(self, raw_pressure):
-        self._pressure = raw_pressure[0]
+        self._pressure = int.from_bytes(raw_pressure, byteorder='little', signed=True) / 4096
 
     @property
     def value(self):
@@ -35,7 +35,7 @@ class SignalTemperature(AbstractSignal):
     """measured temperature in degC"""
 
     def __init__(self, raw_temperature):
-        self._temperature = raw_temperature[0]
+        self._temperature = int.from_bytes(raw_temperature, byteorder='little', signed=True) / 100
 
     @property
     def value(self):
