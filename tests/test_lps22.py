@@ -9,7 +9,7 @@
 # Product:       lps22
 # Model-Version: 1.0.0
 #
-
+import os
 import pytest
 from sensirion_driver_adapters.i2c_adapter.i2c_channel import I2cChannel
 from sensirion_i2c_driver import I2cConnection
@@ -19,6 +19,9 @@ from sensirion_shdlc_sensorbridge import SensorBridgeShdlcDevice, SensorBridgePo
 from sensirion_i2c_lps22.device import Lps22Device
 
 from sensirion_i2c_lps22.commands import (OdrFrequency)
+
+
+pytestmark = pytest.mark.skipif(os.environ.get('NO_HW_TESTS', False))
 
 
 @pytest.fixture
