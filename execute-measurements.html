@@ -137,32 +137,35 @@ pass the port in use with the <code class="code docutils literal notranslate"><s
 
 <span class="k">with</span> <span class="n">ShdlcSerialPort</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">serial_port</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">460800</span><span class="p">)</span> <span class="k">as</span> <span class="n">port</span><span class="p">:</span>
     <span class="n">bridge</span> <span class="o">=</span> <span class="n">SensorBridgeShdlcDevice</span><span class="p">(</span><span class="n">ShdlcConnection</span><span class="p">(</span><span class="n">port</span><span class="p">),</span> <span class="n">slave_address</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">bridge</span><span class="o">.</span><span class="n">set_i2c_frequency</span><span class="p">(</span><span class="n">SensorBridgePort</span><span class="o">.</span><span class="n">ONE</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mf">100e3</span><span class="p">)</span>
+    <span class="n">bridge</span><span class="o">.</span><span class="n">set_i2c_frequency</span><span class="p">(</span><span class="n">SensorBridgePort</span><span class="o">.</span><span class="n">ONE</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mf">400e3</span><span class="p">)</span>
     <span class="n">bridge</span><span class="o">.</span><span class="n">set_supply_voltage</span><span class="p">(</span><span class="n">SensorBridgePort</span><span class="o">.</span><span class="n">ONE</span><span class="p">,</span> <span class="n">voltage</span><span class="o">=</span><span class="mf">3.3</span><span class="p">)</span>
     <span class="n">bridge</span><span class="o">.</span><span class="n">switch_supply_on</span><span class="p">(</span><span class="n">SensorBridgePort</span><span class="o">.</span><span class="n">ONE</span><span class="p">)</span>
     <span class="n">i2c_transceiver</span> <span class="o">=</span> <span class="n">SensorBridgeI2cProxy</span><span class="p">(</span><span class="n">bridge</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">SensorBridgePort</span><span class="o">.</span><span class="n">ONE</span><span class="p">)</span>
     <span class="n">channel</span> <span class="o">=</span> <span class="n">I2cChannel</span><span class="p">(</span><span class="n">I2cConnection</span><span class="p">(</span><span class="n">i2c_transceiver</span><span class="p">),</span>
-                         <span class="n">slave_address</span><span class="o">=</span><span class="mh">0x5C</span><span class="p">,</span>
-                         <span class="n">crc</span><span class="o">=</span><span class="n">CrcCalculator</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mh">0x31</span><span class="p">,</span> <span class="mh">0xff</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">))</span>
+                         <span class="n">slave_address</span><span class="o">=</span><span class="mh">0x5C</span><span class="p">)</span>
     <span class="n">sensor</span> <span class="o">=</span> <span class="n">Lps22Device</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
     <span class="n">sensor</span><span class="o">.</span><span class="n">swreset</span><span class="p">()</span>
     <span class="n">sensor</span><span class="o">.</span><span class="n">start_one_shot_measurement</span><span class="p">()</span>
-    <span class="n">a_status</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a_status: </span><span class="si">{</span><span class="n">a_status</span><span class="si">}</span><span class="s2">; &quot;</span>
-          <span class="p">)</span>
+    <span class="n">data_ready</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">data_ready</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">a_status</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>
+        <span class="n">data_ready</span> <span class="o">=</span> <span class="n">a_status</span><span class="o">.</span><span class="n">P_DA</span> <span class="ow">and</span> <span class="n">a_status</span><span class="o">.</span><span class="n">T_DA</span>
     <span class="n">a_pressure</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">read_pressure</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a_pressure: </span><span class="si">{</span><span class="n">a_pressure</span><span class="si">}</span><span class="s2">; &quot;</span>
           <span class="p">)</span>
     <span class="n">a_temperature</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">read_temperature</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a_temperature: </span><span class="si">{</span><span class="n">a_temperature</span><span class="si">}</span><span class="s2">; &quot;</span>
           <span class="p">)</span>
+
     <span class="n">sensor</span><span class="o">.</span><span class="n">start_continious_measurement</span><span class="p">(</span><span class="n">OdrFrequency</span><span class="o">.</span><span class="n">FREQUENCY1HZ</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-            <span class="n">a_status</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a_status: </span><span class="si">{</span><span class="n">a_status</span><span class="si">}</span><span class="s2">; &quot;</span>
-                  <span class="p">)</span>
+            <span class="n">data_ready</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="n">data_ready</span><span class="p">:</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+                <span class="n">a_status</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>
+                <span class="n">data_ready</span> <span class="o">=</span> <span class="n">a_status</span><span class="o">.</span><span class="n">P_DA</span> <span class="ow">and</span> <span class="n">a_status</span><span class="o">.</span><span class="n">T_DA</span>
             <span class="n">a_pressure</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">read_pressure_single_bytes</span><span class="p">()</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a_pressure: </span><span class="si">{</span><span class="n">a_pressure</span><span class="si">}</span><span class="s2">; &quot;</span>
                   <span class="p">)</span>
@@ -219,8 +222,7 @@ If this is different on your system, pass the port in use with the <code class="
 
 <span class="k">with</span> <span class="n">LinuxI2cTransceiver</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">i2c_port</span><span class="p">)</span> <span class="k">as</span> <span class="n">i2c_transceiver</span><span class="p">:</span>
     <span class="n">channel</span> <span class="o">=</span> <span class="n">I2cChannel</span><span class="p">(</span><span class="n">I2cConnection</span><span class="p">(</span><span class="n">i2c_transceiver</span><span class="p">),</span>
-                         <span class="n">slave_address</span><span class="o">=</span><span class="mh">0x5C</span><span class="p">,</span>
-                         <span class="n">crc</span><span class="o">=</span><span class="n">CrcCalculator</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mh">0x31</span><span class="p">,</span> <span class="mh">0xff</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">))</span>
+                         <span class="n">slave_address</span><span class="o">=</span><span class="mh">0x5C</span><span class="p">)</span>
     <span class="n">sensor</span> <span class="o">=</span> <span class="n">Lps22Device</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
     <span class="n">sensor</span><span class="o">.</span><span class="n">swreset</span><span class="p">()</span>
     <span class="n">sensor</span><span class="o">.</span><span class="n">start_one_shot_measurement</span><span class="p">()</span>
