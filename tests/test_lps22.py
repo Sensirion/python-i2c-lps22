@@ -7,7 +7,7 @@
 #
 # Generator:     sensirion-driver-generator 0.33.0
 # Product:       lps22
-# Model-Version: 1.0.0
+# Model-Version: 1.0.1
 #
 import os
 import pytest

@@ -7,7 +7,7 @@
 #
 # Generator:     sensirion-driver-generator 0.33.0
 # Product:       lps22
-# Model-Version: 1.0.0
+# Model-Version: 1.0.1
 #
 """
 The class Lps22DeviceBase implements the low level interface of the sensor.
@@ -288,8 +288,10 @@ class Lps22Device(Lps22DeviceBase):
 
     def start_continious_measurement(self, measurement_frequency):
         """
-        Start continious measurement with given frequency.
-        Use read_pressure_single_bytes and read_temperature_signle_bytes to get sensor values.
+        Start continious measurement with given frequency. Available frequencies depend on the version
+        of your LPS22 sensor, please check the datasheet for more details.
+        Use read_pressure_single_bytes and read_temperature_signle_bytes to get sensor values as
+        the multi byte read option is disabled when using the continious measurement.
 
         :param measurement_frequency:
 
