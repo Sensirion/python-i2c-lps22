@@ -7,7 +7,7 @@
 #
 # Generator:     sensirion-driver-generator 0.33.0
 # Product:       lps22
-# Model-Version: 1.0.0
+# Model-Version: 1.0.1
 #
 """
 The transfer classes specify the data that is transferred between host and sensor. The generated transfer classes
@@ -280,6 +280,8 @@ class OdrFrequency(Enum):
     FREQUENCY25HZ = 3
     FREQUENCY50HZ = 4
     FREQUENCY75HZ = 5
+    FREQUENCY100HZ = 6
+    FREQUENCY200HZ = 7
 
     def __int__(self):
         return self.value
