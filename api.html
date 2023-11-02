@@ -362,8 +362,10 @@ Use read_pressure and read_temperature to get sensor values.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sensirion_i2c_lps22.device.Lps22Device.start_continious_measurement">
 <span class="sig-name descname"><span class="pre">start_continious_measurement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">measurement_frequency</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_i2c_lps22/device.html#Lps22Device.start_continious_measurement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sensirion_i2c_lps22.device.Lps22Device.start_continious_measurement" title="Permalink to this definition"></a></dt>
-<dd><p>Start continious measurement with given frequency.
-Use read_pressure_single_bytes and read_temperature_signle_bytes to get sensor values.</p>
+<dd><p>Start continious measurement with given frequency. Available frequencies depend on the version
+of your LPS22 sensor, please check the datasheet for more details.
+Use read_pressure_single_bytes and read_temperature_signle_bytes to get sensor values as
+the multi byte read option is disabled when using the continious measurement.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>measurement_frequency</strong> – </p>
@@ -997,6 +999,16 @@ filter can be reset by reading this register before generating pressure measurem
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY75HZ">
 <span class="sig-name descname"><span class="pre">FREQUENCY75HZ</span></span><em class="property"> <span class="pre">=</span> <span class="pre">5</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY75HZ" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY100HZ">
+<span class="sig-name descname"><span class="pre">FREQUENCY100HZ</span></span><em class="property"> <span class="pre">=</span> <span class="pre">6</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY100HZ" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY200HZ">
+<span class="sig-name descname"><span class="pre">FREQUENCY200HZ</span></span><em class="property"> <span class="pre">=</span> <span class="pre">7</span></em><a class="headerlink" href="#sensirion_i2c_lps22.commands.OdrFrequency.FREQUENCY200HZ" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>

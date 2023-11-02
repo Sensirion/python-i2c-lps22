@@ -80,7 +80,7 @@
 <span class="c1">#</span>
 <span class="c1"># Generator:     sensirion-driver-generator 0.33.0</span>
 <span class="c1"># Product:       lps22</span>
-<span class="c1"># Model-Version: 1.0.0</span>
+<span class="c1"># Model-Version: 1.0.1</span>
 <span class="c1">#</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">The class Lps22DeviceBase implements the low level interface of the sensor.</span>
@@ -361,8 +361,10 @@
 
 <div class="viewcode-block" id="Lps22Device.start_continious_measurement"><a class="viewcode-back" href="../../api.html#sensirion_i2c_lps22.device.Lps22Device.start_continious_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">start_continious_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measurement_frequency</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Start continious measurement with given frequency.</span>
-<span class="sd">        Use read_pressure_single_bytes and read_temperature_signle_bytes to get sensor values.</span>
+<span class="sd">        Start continious measurement with given frequency. Available frequencies depend on the version</span>
+<span class="sd">        of your LPS22 sensor, please check the datasheet for more details.</span>
+<span class="sd">        Use read_pressure_single_bytes and read_temperature_signle_bytes to get sensor values as</span>
+<span class="sd">        the multi byte read option is disabled when using the continious measurement.</span>
 
 <span class="sd">        :param measurement_frequency:</span>
 
