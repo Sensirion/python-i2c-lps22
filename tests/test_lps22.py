@@ -21,7 +21,7 @@ from sensirion_i2c_lps22.device import Lps22Device
 from sensirion_i2c_lps22.commands import (OdrFrequency)
 
 
-pytestmark = pytest.mark.skipif(os.environ.get('NO_HW_TESTS', False))
+pytestmark = pytest.mark.needs_hardware
 
 
 @pytest.fixture
@@ -38,8 +38,7 @@ def sensor(channel_provider):
 
 def test_whoami1(sensor):
     chip_id = sensor.whoami()
-    print(f"chip_id: {chip_id}; "
-          )
+    print(f"chip_id: {chip_id}; ")
 
 
 def test_swreset1(sensor):
