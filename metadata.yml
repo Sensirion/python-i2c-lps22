@@ -1,8 +1,7 @@
 # driver generation metadata
-generator_version: 0.33.0
+generator_version: 1.9.1
 model_version: 1.0.1
-dg_status:
-- released
-is_manually_modified: true
-first_generated: '2023-10-27 08:05'
-last_generated: '2023-11-02 15:10'
+dg_status: released
+is_manually_modified: false
+first_generated: '2023-10-27 10:05'
+last_generated: '2026-09-16 14:08'
